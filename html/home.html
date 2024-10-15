@@ -1,0 +1,534 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    
+    <head>
+      <title>JEROVAI EMPRENDIMIENTOS</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+        .container {
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            z-index: -1;
+            height: 100vh;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content {
+            
+            text-align: center;
+            z-index: 1;
+        }
+        .content h1{
+          color: #fff;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 50px;
+            background-color: #25d366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-button a{
+          text-decoration: none;
+        }
+        .whatsapp-button:hover{
+          color: #fff;
+          background-color: #128c7e;
+          cursor: pointer;
+        }
+        .color1 { background-color: #C5ADC5; }
+        .color2 { background-color: #f2f2f2; }
+        .color3 { background-color: #B2B5E0; }
+        .color4 { background-color: #F2F2F2; }
+        .color5 { background-color: #C5ADC5; }
+        .color6 { background-color: #B2B5E0; }
+        .color7 { background-color: #F2F2F2; }
+        .color8 { background-color: #C5ADC5; }
+        
+        /* Estilo para el segundo contenedor */
+        .sub-container {
+          
+          max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+          margin: auto;
+          height: auto;
+          display: flex;
+          justify-content: center; /* Centra el contenido horizontalmente */
+          padding: 20px;
+        }
+
+        /* Estilo para la caja izquierda */
+        .sub-container .left-box {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Estilo para la imagen en la caja izquierda */
+        .sub-container .left-box img {
+          width: 90%; /* Ajusta el tamaño de la imagen */
+          height: 70%;
+          margin: auto;
+        }
+
+        /* Estilo para la caja derecha */
+        .sub-container .right-box {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* Estilo para el texto en la caja derecha */
+        .sub-container .right-box h2,
+        .sub-container .right-box p {
+          margin: 0;
+          font-size: 1.5em; /* Ajusta el tamaño del texto */
+        }
+        .info-link {
+          display: inline-block;
+          padding: 10px 20px; /* Espaciado interno */
+          border: 2px solid black; /* Borde negro */
+          color: black; /* Color del texto */
+          border-radius: 20px; /* Borde redondeado para hacer el botón ovalado */
+          background-color: rgba(128, 128, 128, 0.5); /* Gris semi-transparente */
+          text-decoration: none; /* Sin subrayado */
+          transition: background-color 0.3s ease; /* Transición suave */
+        }
+
+        .info-link:hover {
+          background-color: rgba(128, 128, 128, 0.8); /* Cambia el color de fondo al pasar el mouse */
+        }
+        .caja3{
+          
+          max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+          width: 95%;
+          margin: auto;
+          height: auto;
+          display: flex;
+          justify-content: center; /* Centra el contenido horizontalmente */
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+        }
+        .container-titulo,
+        .container-imagenes,
+        .container-info {
+            /* Estilos para los containers internos */
+            
+            max-width: 100%; /* Ocupar todo el ancho del subcontenedor */
+            box-sizing:border-box;/* Incluir padding y border en el ancho */
+            padding: 17px; /* Espaciado interno */
+        }
+        
+        .container-imagenes {
+            /* Estilos adicionales para el container de las imágenes */
+            display: flex;
+            
+            flex-wrap: wrap;
+        
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagen {
+            /* Estilos para cada imagen */
+            padding: 5px;
+            width: calc(50% - 20px); /* El 50% del ancho menos el espaciado */
+            margin-bottom: 20px;
+            
+        }
+
+        .imagen img {
+            /* Estilos para las imágenes */
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+
+        }
+
+        .imagen img:hover{
+          transform: scale(1.1);
+        }
+
+        .btn-mas-info {
+            /* Estilos para el botón "Más información" */
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente */
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-mas-info:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente al pasar el cursor */
+        }
+        .map-container {
+            /* Estilos para el contenedor del mapa */
+            align-items: center;
+            position: relative;
+            width: 100%;
+            margin: auto;
+            height: 80%; /* Altura predeterminada del mapa */
+            overflow: hidden; /* Para evitar el desbordamiento del mapa */
+            margin-bottom: 20px; /* Espaciado inferior */
+            display: flex;
+            justify-content: center;
+        }
+
+        .boton-container {
+            /* Estilos para el contenedor del botón */
+            text-align: center;
+        }
+
+        .btn-mapa {
+            /* Estilos para el botón "Ver en mapa" */
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente */
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-mapa:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente al pasar el cursor */
+        }
+        #video-bg {  
+          display: flex;
+          max-width: 70%;        
+          width: 60%;
+          margin: auto;
+          height: 80%;
+        }
+        .caja4{
+          
+          max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+          width: 95%;
+          margin: auto;
+          height: auto;
+          display: flex;
+          justify-content: center; /* Centra el contenido horizontalmente */
+          align-items: center;
+          padding: 20px;
+        }
+        
+        .caja4 .container-titulo{
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .redes-sociales{
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+        }
+        .redes-sociales a {
+          display: block;
+          width: 50px;
+          height: 50px;
+          margin-bottom: 10px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          border-radius: 50%;
+        }
+        .whatsapp-icon{
+          background-image:url('../image/ftos/wsp.jpg');
+          
+        }
+        .instagram-icon{
+          background-image:url('../image/ftos/instagram.jpg');
+          
+        }
+        .facebook-icon{
+          background-image:url('../image/ftos/facebook.jpg');
+          
+        }
+        #contact{
+          max-width: 50%;
+          margin: auto;
+          margin-bottom: 50px;
+        }
+
+        footer h3 {
+          margin-bottom: 20px;
+        }
+
+        footer li {
+          margin-bottom: 15px;
+          transition: 0.5s;
+        }
+
+        footer li:hover {
+          color: #FFF0CF;
+          cursor: pointer;
+        }
+        .galeria {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .galeria h2 {
+            margin-bottom: 20px;
+        }
+
+        .galeria-imagenes {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .galeria-imagenes img {
+            max-width: 33.33%;
+            height: auto;
+            margin: 0 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-imagenes img:hover {
+            transform: scale(1.1);
+        }
+
+        .navegacion {
+            /* Estilos para las flechas de navegación */
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navegacion span {
+            /* Estilos para las flechas */
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .navegacion .anterior {
+            /* Estilos para la flecha anterior */
+            margin-right: 10px;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            .container {
+                height: auto; /* Cambia la altura a automática para que el contenido pueda desplazarse */
+                padding: 20px; /* Agrega un poco de espacio alrededor de los contenedores */
+                max-width: 100%;
+                margin: auto;
+            }
+            .sub-container .left-box {
+              display: none;
+            }
+            .caja3{
+              height: auto;
+            }
+            .container-imagenes {
+                /* Cambiar la dirección del flujo flex a columna */
+                flex-direction: column;
+            }
+
+            .imagen {
+                /* Ajustar el ancho para ocupar toda la fila */
+                width: 100%;
+            }
+            .caja4{
+              height: auto;
+              flex-direction: column;
+            }
+            .galeria-imagenes img {
+              max-width: 100%;
+            }
+            .navegacion {
+                /* Centrar las flechas en dispositivos móviles */
+                display: flex;
+                justify-content: center;
+            }
+        }
+      </style>
+      </head>
+      <body>
+        <div class="redes-sociales">
+          <a href="https://wa.me/0991649701" class="whatsapp-icon"></a>
+          <a href="https://www.instagram.com/@" class="instagram-icon"></a>
+          <a href="https://www.facebook.com/@" class="facebook-icon"></a>
+        </div>
+        <div class="container video-container">
+          <video autoplay muted loop id="video-fondo">
+              <source src="../image/ftos/video3.mp4" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+          </video>
+          <div class="content">
+              <h1>JEROVAI</h1><h1>EMPRENDIMIENTOS</h1>
+              <a href="#" target="_blank" class="whatsapp-button">Contactanos al WhatsApp!!</a>
+          </div>
+        </div>
+        <div class="container color1">
+          <div class="sub-container">
+            <!-- Caja izquierda para la imagen -->
+            <div class="left-box">
+              <img src="../image/ftos/logo.jpeg" alt="Imagen">
+            </div>
+            <!-- Caja derecha para el título y el texto -->
+            <div class="right-box">
+              <h3>Es tu Osportunidad de Adquirirlos</h3>
+              <p>Rodeate de paz, naturaleza y relax..</p>
+              <br><br>
+              <a href="#" class="info-link"><b>Más Información</b></a>
+            </div>
+          </div>
+        </div>
+          
+        <div class="container color2">
+          <div class="caja3">
+            <div class="container-titulo">
+              <h2 align="center"> </h2>
+              <p align="center"> </p>
+            </div>
+            <!-- Container con las dos imágenes -->
+            <div class="container-imagenes">
+                <div class="imagen">
+                    <img src="../image/ftos/medidas1.jpeg" alt="Imagen 1">
+                </div>
+                <div class="imagen">
+                    <img src="../image/ftos/medidas2.jpeg" alt="Imagen 2">
+                </div>
+            </div>
+            <!-- Container con botón "Más información" -->
+            <div class="container-info">
+                <a href="#" class="btn-mas-info">Más información</a>
+            </div>
+          </div>
+        </div>
+        <div class="container color3">
+          <div class="caja3">
+            <div class="container-titulo">
+              <h3 align="left">Estos lotes cuentan con unas de las mejores ubicaciones que quedan disponibles por la zona..</h3>
+              <p align="left"></p>
+            </div>
+            <div class="map-container">
+              <!-- Aquí se incrustará el mapa -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14131.036667732067!2d85.32395955!3d27.69383745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1637755481449!5m2!1sen!2snp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <!-- Contenedor de botón -->
+            <div class="boton-container">
+                <a href="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14131.036667732067!2d85.32395955!3d27.69383745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1637755481449!5m2!1sen!2snp" class="btn-mapa">Ver en mapa</a>
+            </div>
+          </div>
+        </div>
+        <div class="container color4">
+          <div class="caja4">
+            <div class="container-titulo">
+              <h2 align="left">Jerovai Emprendimientos Presenta stos 23 Lotes en Video</h2>
+              <p align="left">Texto descriptivo aquí.</p>
+            </div>
+            <video autoplay muted controls id="video-bg">
+              <source src="../image/ftos/video1.mp4" type="video/mp4">
+              <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+              Tu navegador no soporta la etiqueta de video.
+            </video>
+          </div>
+        </div>
+        <div class="container color5">
+          <div class="caja4">
+            <div class="container-titulo">
+              <h2 align="left">A Pocos Metros del Hermoso Lago Ypacarai</h2>
+              <p align="left">Texto descriptivo aquí.</p>
+            </div>
+            <video autoplay muted controls id="video-bg">
+              <source src="../image/ftos/video1.mp4" type="video/mp4">
+              <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+              Tu navegador no soporta la etiqueta de video.
+            </video>
+          </div>
+        </div>
+        <div class="container color6">
+          <div class="caja4">
+            <div class="container-titulo">
+              <h2 align="left">A Pasos de la Ruta Principal de San Bernardino</h2>
+              <p align="left">Texto descriptivo aquí.</p>
+            </div>
+            <video autoplay muted controls id="video-bg">
+              <source src="../image/ftos/video1.mp4" type="video/mp4">
+              <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+              Tu navegador no soporta la etiqueta de video.
+            </video>
+          </div>
+          </div>
+        </div>
+        <div class="container color7">
+          <div class="sub-container">
+            <div class="galeria">
+              <h2>Galería de Imágenes</h2>
+              <div class="galeria-imagenes">
+                  <img src="../image/ftos/imagen1.jpeg" alt="Imagen 1" class="visible">
+                  <img src="../image/ftos/imagen2.jpeg" alt="Imagen 2" class="visible">
+                  <img src="../image/ftos/imagen3.jpeg" alt="Imagen 3" class="visible">
+                  <img src="../image/ftos/imagen4.jpeg" alt="Imagen 4" class="visible">
+                  <img src="../image/ftos/imagen5.jpeg" alt="Imagen 5" class="visible">
+                  <img src="../image/ftos/imagen3.jpeg" alt="Imagen 6" class="visible">
+              </div>
+              <!-- Flechas de navegación -->
+              <div class="navegacion">
+                  <span class="anterior" onclick="cambiarImagen(-1)">&#10094;</span>
+                  <span class="siguiente" onclick="cambiarImagen(1)">&#10095;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container color8">
+            <footer>
+              <div class="box" id="contact">
+                <h3>Contactanos</h3>
+                <ul>
+                  <li><i class="far fa-envelope"></i> demoexample@gmail.com </li>
+                  <li><i class="far fa-phone-alt"></i> 123 456 7898 </li>
+                  <li><i class="far fa-comments"></i> Atencion al cliente 24 horas al dia, 7 dias a la semana</li>
+                </ul>
+              </div>
+            </footer>
+        </div>
+        <script>
+          let imagenActual = 0; // Variable para rastrear la imagen actualmente visible
+          function cambiarImagen(n) {
+              // Ocultar la imagen actual
+              const imagenes = document.querySelectorAll('.galeria-imagenes img');
+              imagenes[imagenActual].classList.remove('visible');
+              // Calcular el índice de la nueva imagen
+              imagenActual = (imagenActual + n + imagenes.length) % imagenes.length;
+              // Mostrar la nueva imagen
+              imagenes[imagenActual].classList.add('visible');
+          }
+        </script>
+      </body>
+    </html>

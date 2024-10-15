@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>ECOHUELLA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="icon" href="image/ftos/" type="image/png">-->
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      text-transform: uppercase;
+      font-family: Verdana, Arial, Helvetica;
+    }
+    .container {
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 30px;
+    }
+    .video-container {
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+        height: 80vh;
+    }
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content {
+        
+        text-align: center;
+        z-index: 1;
+    }
+    .content h1{
+      color: #fff;
+    }
+    .whatsapp-button {
+        display: inline-block;
+        padding: 20px 40px;
+        border-radius: 50px;
+        background-color: #25d366;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        z-index: 1;
+    }
+    .whatsapp-button a{
+      z-index: 1;
+      text-decoration: none;
+    }
+    .whatsapp-button:hover{
+      color: #fff;
+      background-color: #128c7e;
+      cursor: pointer;
+    }
+    .color1 { background-color: #043021; }
+    .color2 { background-color: #f2f2f2; }
+    .color3 { background-color: #043021; }
+    .color4 { background-color: #F2F2F2; }
+    .color5 { background-color: #F2F2F2; }
+    .color6 { background-color: #F2F2F2; }
+    .color7 { background-color: #043021; }
+    .color8 { background-color: #F2F2F2; }
+    
+    
+    /* Estilo para el segundo contenedor */
+    .sub-container {
+      
+      max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+      margin: auto;
+      height: auto;
+      display: flex;
+      justify-content: center; /* Centra el contenido horizontalmente */
+      padding: 20px;
+    }
+
+    /* Estilo para la caja izquierda */
+    .sub-container .left-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Estilo para la imagen en la caja izquierda */
+    .sub-container .left-box img {
+      width: 90%; /* Ajusta el tamaño de la imagen */
+      height: 70%;
+      margin: auto;
+    }
+
+    /* Estilo para la caja derecha */
+    .sub-container .right-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilo para el texto en la caja derecha */
+    .sub-container .right-box h2,
+    .sub-container .right-box p {
+      margin: 0;
+      font-size: 1.5em; /* Ajusta el tamaño del texto */
+    }
+    
+    .info-link {
+      display: inline-block;
+      padding: 10px 20px; /* Espaciado interno */
+      border: 2px solid black; /* Borde negro */
+      color: black; /* Color del texto */
+      border-radius: 10px; /* Borde redondeado para hacer el botón ovalado */
+      /*background-color: rgba(0, 0, 0, 0.2); Gris semi-transparente */
+      text-decoration: none; /* Sin subrayado */
+      transition: transform 0.3s ease; /* Transición suave */
+    }
+
+    .info-link:hover {
+      transform: scale(1.1);
+      background-color: rgba(0, 0, 0, 0.5); /* Cambia el color de fondo al pasar el mouse */
+    }
+    .caja3{
+      
+      /*max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+      /*width: 95%;*/
+      margin: auto;
+      height: auto;
+      display: flex;
+      justify-content: center; /* Centra el contenido horizontalmente */
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .container-titulo,
+    .container-imagenes,
+    .container-info {
+        /* Estilos para los containers internos */
+        
+        max-width: 100%; /* Ocupar todo el ancho del subcontenedor */
+        box-sizing:border-box;/* Incluir padding y border en el ancho */
+        padding: 17px; /* Espaciado interno */
+    }
+    
+    .container-imagenes {
+        /* Estilos adicionales para el container de las imágenes */
+        display: flex;
+        
+        flex-wrap: wrap;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imagen {
+        /* Estilos para cada imagen */
+        padding: 5px;
+        width: calc(50% - 20px); /* El 50% del ancho menos el espaciado */
+        margin-bottom: 20px;
+    }
+
+    .imagen img {
+        /* Estilos para las imágenes */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .imagen img:hover{
+      transform: scale(1.1);
+    }
+    
+    .btn-mas-info {
+        /* Estilos para el botón "Más información" */
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+        /*background-color: rgba(0, 0, 0, 0.2);  Fondo semi-transparente */
+        color: black;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-mas-info:hover {
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente al pasar el cursor */
+    }
+    .map-container {
+        /* Estilos para el contenedor del mapa */
+        align-items: center;
+        position: relative;
+        width: 100%;
+        margin: auto;
+        height: 80%; /* Altura predeterminada del mapa */
+        overflow: hidden; /* Para evitar el desbordamiento del mapa */
+        margin-bottom: 20px; /* Espaciado inferior */
+        display: flex;
+        justify-content: center;
+    }
+
+    .boton-container {
+        /* Estilos para el contenedor del botón */
+        text-align: center;
+    }
+
+    .btn-mapa {
+        /* Estilos para el botón "Ver en mapa" */
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid #043021;
+        border-radius: 10px;
+        /*background-color: rgba(0, 0, 0, 0.2);  Fondo semi-transparente */
+        color: #043021;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+    .btn-mapa:hover {
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente al pasar el cursor */
+    }
+    .video-bg {  
+      display: flex;
+      max-width: 80%;        
+      width: 70%;
+      margin: auto;
+      height: 80%;
+      transition: transform 0.3s ease;
+    }
+    .video-bg:hover{
+      transform: scale(1.1);
+    }
+    .caja4{
+      
+      max-width: 95%; /* Toma el 90% del ancho del contenedor principal */
+      width: 95%;
+      margin: auto;
+      height: auto;
+      display: flex;
+      justify-content: center; /* Centra el contenido horizontalmente */
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .caja4 .container-titulo{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .redes-sociales{
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .redes-sociales a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 50%;
+    }
+    .whatsapp-icon{
+      background-image:url('../image/ftos/wsp.jpg');
+      transition: transform 0.3s ease;
+      
+    }
+    .whatsapp-icon:hover{
+      transform: scale(1.1);
+    }
+    .instagram-icon{
+      transition: transform 0.3s ease;
+      background-image:url('../image/ftos/instagram.jpg');
+      
+    }
+    .instagram-icon:hover{
+      transform: scale(1.1);
+    }
+    .facebook-icon{
+      transition: transform 0.3s ease;
+      background-image:url('../image/ftos/face.jpg');
+      
+    }
+    .facebook-icon:hover{
+      transform: scale(1.1);
+    }
+    #contact{
+      width: 50%;
+      max-width: 100%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    footer h3 {
+      margin-bottom: 20px;
+    }
+
+    footer li {
+      margin-bottom: 15px;
+      transition: 0.5s;
+    }
+
+    footer li:hover {
+      color: #b6b6b6;
+      cursor: pointer;
+    }
+    .galeria {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .galeria h2 {
+        margin-bottom: 20px;
+    }
+
+    .galeria-imagenes {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .galeria-imagenes img {
+        max-width: 33.33%;
+        height: auto;
+        margin: 0 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .galeria-imagenes img:hover {
+        transform: scale(1.1);
+    }
+
+    .navegacion {
+        /* Estilos para las flechas de navegación */
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: #f2f2f2;
+    }
+
+    .navegacion span {
+        /* Estilos para las flechas */
+        cursor: pointer;
+        padding: 10px;
+        
+    }
+
+    .navegacion .anterior {
+        /* Estilos para la flecha anterior */
+        margin-right: 10px;
+    }
+
+    .content .wsp{
+      max-width: 80%;
+      margin: auto;
+      text-align: center;
+      z-index: 1;
+    }
+    .btn-wsp {
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: 30px;
+      background-color: #25d366;
+      color: #fff;
+      text-decoration: none;
+      z-index: 1;
+      transition: backgroud-color 0.3s;
+    }
+    .btn-wsp:hover{
+      background-color: #128c7e;
+    }
+    .mapa{
+      flex-direction: column;
+    }
+    .img-map {
+        /* Estilos para cada imagen */
+        padding: 5px;
+        width: 95%; /* El 50% del ancho menos el espaciado */
+        margin:auto;
+    }
+
+    .img-map img {
+        /* Estilos para las imágenes */
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .img-map img:hover{
+      transform: scale(1.1);
+    }
+    .video-vacas{
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .video-vacas .vacas{
+      width: 100%;
+    }
+    
+    
+
+    .hamburger{
+      position:fixed;
+      background-color:transparent;
+      left:0;
+      top:0;
+      height:30px;
+      width:30px;
+      padding:20px 20px;
+      -webkit-transform:translate3d(0, 0, 0);
+      transform:translate3d(0, 0, 0);
+      -webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+      transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+      z-index:1002;
+      cursor:pointer;
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none
+    }
+    .hamburger.is-active{
+      background-color:none;
+    }
+    ._layer{
+      background:#000000;
+      margin-bottom:4px;
+      border-radius:2px;
+      width:28px;
+      height:4px;
+      opacity:1;
+      -webkit-transform:translate3d(0, 0, 0);
+      transform:translate3d(0, 0, 0);
+      -webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+      transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    }
+    .hamburger:hover .-top{
+      -webkit-transform:translateY(-100%);
+      -ms-transform:translateY(-100%);
+      transform:translateY(-100%);
+    }
+    .hamburger:hover .-bottom{
+      -webkit-transform:translateY(50%);
+      -ms-transform:translateY(100%);
+      transform:translateY(100%);
+      }
+    .hamburger.is-active .-top{
+      -webkit-transform:translateY(200%) rotate(45deg) !important;
+      -ms-transform:translateY(200%) rotate(45deg) !important;
+      transform:translateY(200%) rotate(45deg) !important;
+    }
+    .hamburger.is-active .-mid{
+      opacity:0;
+    }
+    .hamburger.is-active .-bottom{
+      -webkit-transform:translateY(-200%) rotate(135deg) !important;
+      -ms-transform:translateY(-200%) rotate(135deg) !important;
+      transform:translateY(-200%) rotate(135deg) !important;
+    }
+
+    .menuppal.is_active{
+      transform: translate3d(0px, 0px, 0px);
+    }
+    .menuppal{
+        background-color: rgba(255, 255, 255, 0.75);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        width: 100%;
+        z-index: 1001;
+    }
+    .menuppal ul{
+      margin:0;padding:0;
+    }
+    .menuppal ul li { 
+      list-style: none;
+      text-align:center;
+      font-family: Verdana, Arial, Helvetica;
+      color:$nav-color-text;
+      font-size: 1.5rem;
+      line-height: 3em;
+      height: 3em;
+      color: #369;
+      text-transform:none;
+      font-weight:bold;
+    }
+    .menuppal ul li a{
+      text-decoration:none;
+      color:#000;
+    }
+    .menuppal ul li a:hover{
+      text-decoration:none;
+      color:#367a64;
+    }
+
+    .container h2{
+      color: #043021;
+      font-weight: bold;
+      text-align:center;
+    }
+    /* Media queries para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+        .container {
+             /* Cambia la altura a automática para que el contenido pueda desplazarse */
+            padding: 20px; /* Agrega un poco de espacio alrededor de los contenedores */
+            max-width: 100%;
+            margin: auto;
+        }
+        .sub-container .left-box {
+          display: none;
+        }
+        .caja3{
+          height: auto;
+        }
+        .container-imagenes {
+            /* Cambiar la dirección del flujo flex a columna */
+            flex-direction: column;
+        }
+
+        .imagen {
+            /* Ajustar el ancho para ocupar toda la fila */
+            width: 100%;
+        }
+        .caja4{
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+          flex-direction: column;
+          padding: 5px;
+        }
+        .galeria-imagenes img {
+          max-width: 100%;
+          margin-bottom: 15px;
+        }
+        .galeria-imagenes{
+          flex-direction: column;
+          overflow: hidden;
+          
+        }
+        .navegacion {
+            /* Centrar las flechas en dispositivos móviles */
+            display: flex;
+            justify-content: center;
+        }
+        .video-bg{
+          max-width: 100%;
+          width: 100%;
+          transition: transform 0.3s ease;
+        }
+
+        .video-bg:hover {
+            transform: scale(1.1);
+        }
+        .btn-wsp{
+          width: 10px 20px;
+        }
+
+    }
+  </style>
+  </head>
+  <body>
+    <div class="redes-sociales">
+      <a href="https://api.whatsapp.com/send?phone=+595971377037&text=Hola me interesan los lotes." class="whatsapp-icon"></a>
+      <a href="https://www.instagram.com/ecohuellapropiedades?igsh=eHc3NXdpempuemp6&utm_source=qr" class="instagram-icon"></a>
+      <a href="https://www.facebook.com/@" class="facebook-icon"></a>
+    </div>
+    <div class="hamburger">
+      <div class="_layer -top"></div>
+      <div class="_layer -mid"></div>
+      <div class="_layer -bottom"></div>
+    </div>
+    <nav class="menuppal">
+        <ul>
+          <li><a href="#inicio">INICIO</a></li>
+          <li><a href="#ciervocua">CIERVO KUA</a></li>
+          <li><a href="#agropecuaria">AGROPECUARIA</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    <script>
+      // selector
+      var menu = document.querySelector('.hamburger');
+      // method
+      function toggleMenu (event) {
+        this.classList.toggle('is-active');
+        document.querySelector( ".menuppal" ).classList.toggle("is_active");
+        event.preventDefault();
+      }
+      // event
+      menu.addEventListener('click', toggleMenu, false);
+      //Solución con jQUery
+          $(document).ready(function(){
+          $('.hamburger').click(function() {
+          $('.hamburger').toggleClass('is-active');
+          $('.menuresponsive').toggleClass('is-active');
+          return false;
+        });
+      });
+    </script>
+    <div class="container video-container">
+      <video autoplay muted loop id="video-fondo">
+          <source src="image/ftos/video3.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+      </video>
+      <div class="content">
+          <h1 style=" display: inline;text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">ECOHUELLA</h1><br><br><br><h3 style=" color:#f2f2f2;display: inline;text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">venta de lotes y propiedades varias</h3>
+          <!--<div class="wsp">
+            <a href="https://api.whatsapp.com/send?phone=0974221568&text=Hola me interesan los lotes." class="btn-wsp">Contactanos al Whatsapp!!</a>
+          </div> -->
+      </div>
+    </div>
+    <div class="container color1" id="inicio">
+      <div class="sub-container">
+        <!-- Caja izquierda para la imagen
+        <div class="left-box">
+          <img src="image/ftos/logo.jpeg" alt="Imagen">
+        </div>
+        Caja derecha para el título y el texto -->
+        <div class="right-box">
+          <p style="color: #f2f2f2; text-align: left;">Rodeate de naturaleza</p>
+          <h2 style="color: #f2f2f2;"><b>Adquiri tu lote..</b></h2>             
+          <br><br>
+          <a href="https://api.whatsapp.com/send?phone=+595971377037&text=Hola me interesan los lotes." class="info-link" style="color: #f2f2f2; border: 2px solid #f2f2f2;"><b>Más Información</b></a>
+        </div>
+      </div>
+    </div>
+      
+    <div class="container color2">
+      <div class="caja3">
+        <div class="container-titulo">
+          <h2 align="center">lotes con las mejores ubicaciones..</h2>
+          <p align="center"></p>
+        </div>
+        <!-- Container con las dos imágenes -->
+        <div class="container-imagenes">
+            <div class="imagen">
+                <img src="image/ftos/medidas11.jpeg" alt="Imagen 1">
+            </div>
+            <div class="imagen">
+                <img src="image/ftos/medidas2.jpeg" alt="Imagen 2">
+            </div>
+        </div>
+        <!-- Container con botón "Más información" -->
+        <div class="container-info">
+            <a href="https://www.google.com/maps/place/25%C2%B022'20.8%22S+57%C2%B015'41.4%22W/@-25.3724346,-57.2640724,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-25.3724346!4d-57.2614975?hl=es&entry=ttu" class="btn-mapa" ><b>Ver en mapa</b></a>
+        </div>
+      </div>
+    </div>
+    <!--<div class="container color3">
+      <div class="caja3">
+        <div class="container-titulo">
+          <h2 align="left"></h2>
+          <p align="left"></p>
+        </div>
+        <div class="map-container" name="map">
+          <!-- Aquí se incrustará el mapa
+          <iframe src="https://www.google.com/maps/place/25%C2%B022'20.8%22S+57%C2%B015'41.4%22W/@-25.3724346,-57.2640724,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-25.3724346!4d-57.2614975?hl=es&entry=ttu" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <!-- Contenedor de botón
+        <div class="boton-container">
+            <a href="https://www.google.com/maps/place/25%C2%B022'20.8%22S+57%C2%B015'41.4%22W/@-25.3724346,-57.2640724,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-25.3724346!4d-57.2614975?hl=es&entry=ttu" class="btn-mapa" style="color: #f2f2f2; border: 2px solid #f2f2f2;">Ver en mapa</a>
+        </div>
+      </div>
+    </div>-->
+    <div class="container color4">
+      <div class="caja4">
+        <div class="container-titulo">
+          <h2 align="center">ECOHUELLA Presenta los Lotes en en venta en este Video..</h2>
+          <p align="left"></p>
+        </div>
+          <video autoplay muted controls class="video-bg">
+            <source src="image/ftos/video2.mp4" type="video/mp4">
+            <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+      </div>
+    </div>
+    <div class="container color5">
+      <div class="caja4">
+        <div class="container-titulo">
+          <h2 align="center">Aprovecha estos Hermosos Lotes..</h2>
+          <p align="left"></p>
+        </div>
+        <video autoplay muted controls class="video-bg">
+          <source src="image/ftos/video1.mp4" type="video/mp4">
+          <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+    </div>
+    <div class="container color6">
+      <div class="caja4">
+        <div class="container-titulo">
+          <h2 align="center">Es la Inversión de tu Futuro..</h2>
+          <p align="left"></p>
+        </div>
+        <video autoplay muted controls class="video-bg">
+          <source src="image/ftos/video3.mp4" type="video/mp4">
+          <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+      </div>
+    </div>
+    <div class="container color7">
+      <div class="sub-container">
+        <div class="galeria">
+          <!--<h3 style="text-align: center; color: #f2f2f2;">Arpovecha estos hermosos lotes.</h3>-->
+          <h2 style="text-align: center; color: #f2f2f2;">Inversión Asegurada!</h2>
+          <div class="galeria-imagenes">
+              <img src="image/ftos/imagen1.jpeg" alt="Imagen 1" class="visible">
+              <img src="image/ftos/imagen2.jpeg" alt="Imagen 2">
+              <img src="image/ftos/imagen3.jpeg" alt="Imagen 3">
+              <img src="image/ftos/imagen4.jpeg" alt="Imagen 4">
+              <img src="image/ftos/imagen5.jpeg" alt="Imagen 5">
+              <img src="image/ftos/imagen3.jpeg" alt="Imagen 6">
+          </div>
+          <h2 style="text-align: center; color: #f2f2f2;">Terrenos desde tan solo <br>78.860.000gs<br><br>Financiacion Propia<br>Hasta 24 meses con pequeñas entregas.</h2>
+          <!-- Flechas de navegación 
+          <div class="navegacion">
+              <span class="anterior" onclick="cambiarImagen(-1)">&#10094;</span>
+              <span class="siguiente" onclick="cambiarImagen(1)">&#10095;</span>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="container mapa color2" id="ciervocua">
+      <div class="caja3">
+        <!-- Container con las dos imágenes -->
+        <h2 style="text-align: center; "><b>lotes en Ciervo kua</b></h2>
+            <div class="img-map">
+                <img src="image/ftos/mapa.png" alt="Imagen 1">
+            </div>
+        </div>
+        <!-- Container con botón "Más información" -->
+        <div class="container-info">
+            <a href="https://www.google.com/maps/place/25%C2%B014'44.9%22S+57%C2%B019'02.4%22W/@-25.2457322,-57.3274834,2620m/data=!3m1!1e3!4m4!3m3!8m2!3d-25.2458057!4d-57.3173218?hl=es&entry=ttu" class="btn-mapa" ><b>Ver en mapa</b></a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container color8">
+      <div class="sub-container">
+        <div class="galeria">
+          <!--<h3 style="text-align: center; color: #f2f2f2;">Arpovecha estos hermosos lotes.</h3>-->
+          <div class="galeria-imagenes">
+              <img src="image/ftos/foto1.jpeg" alt="Imagen 1" class="visible">
+              <img src="image/ftos/foto2.jpeg" alt="Imagen 2">
+              <img src="image/ftos/foto4.jpeg" alt="Imagen 4">
+              <img src="image/ftos/foto5.jpeg" alt="Imagen 5">
+              <img src="image/ftos/foto6.jpeg" alt="Imagen 6">
+              <img src="image/ftos/foto7.jpeg" alt="Imagen 7">
+          </div>
+          <h2 style="text-align: center; color: #043021;">dejaremos huellas<br>contigo</h2>
+          <!-- Flechas de navegación 
+          <div class="navegacion">
+              <span class="anterior" onclick="cambiarImagen(-1)">&#10094;</span>
+              <span class="siguiente" onclick="cambiarImagen(1)">&#10095;</span>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="container color7" id="agropecuaria">
+      <div class="sub-container">
+        <div class="galeria">
+          <h2 style="text-align: center; color: #f2f2f2;">90 hectareas en paraguari</h2><br>
+          <!--<h3 style="text-align: center; color: #f2f2f2;">Arpovecha estos hermosos lotes.</h3>-->
+          <div class="galeria-imagenes">
+              <img src="image/ftos/agro1.jpeg" alt="Imagen 1" class="visible">
+              <img src="image/ftos/agro2.jpeg" alt="Imagen 2">
+              <img src="image/ftos/agro4.jpeg" alt="Imagen 4">
+              <img src="image/ftos/agro5.jpeg" alt="Imagen 5">
+          </div>
+          
+          <h2 style="text-align: center; color: #f2f2f2;">Marcando huellas<br>contigo</h2>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container mapa color7">
+        <div class="video-vacas">
+          <!-- Container con las dos imágenes -->
+          <video autoplay muted controls class="video-bg vacas">
+            <source src="image/ftos/vacas.mp4" type="video/mp4">
+            <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+        <!-- Container con botón "Más información" -->
+        <div class="container-info">
+          <a href="https://www.google.com/maps/place/25%C2%B034'05.0%22S+57%C2%B010'14.6%22W/@-25.5680618,-57.173294,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-25.5680618!4d-57.1707191?hl=es&entry=ttu" class="btn-mapa" style="color: #f2f2f2; border: 2px solid #f2f2f2;"><b>Ver Ubicación</b></a>
+        </div>
+      </div>
+    <div class="container color2" id="contacto">
+        <footer>
+          <h2 style="text-align: center; color: #043021;">¡Aprovecha esta oportunidad<br>de inversion con ECOHUELLA!</h2>
+          <div class="box" id="contact">
+            <h3 style="color:#043021; text-align: center;"><b>Contactenos</b></h3>
+            <ul style="color:#043021;">
+              <b>
+                <li><i class="far fa-phone-alt"></i> 0971 377 037</li>
+                <li><i class="far fa-comments"></i> Atencion al cliente 24 horas al dia, 7 dias a la semana</li>  
+              </b>
+              <!--<li><i class="far fa-envelope"></i> demoexample@gmail.com </li>-->
+              </ul>
+          </div>
+        </footer>
+    </div>
+    <script>
+      let imagenActual = 0; // Variable para rastrear la imagen actualmente visible
+      function cambiarImagen(n) {
+          // Ocultar la imagen actual
+          const imagenes = document.querySelectorAll('.galeria-imagenes img');
+          imagenes[imagenActual].classList.remove('visible');
+          // Calcular el índice de la nueva imagen
+          imagenActual = (imagenActual + n + imagenes.length) % imagenes.length;
+          // Mostrar la nueva imagen
+          imagenes[imagenActual].classList.add('visible');
+      }
+    </script>
+  </body>
+</html>

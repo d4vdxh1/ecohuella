@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>JEROVAI EMPRENDIMIENTOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+  <style>
+    #video-bg {          
+      width: 100%;
+    }
+    
+    #contact{
+      max-width: 50%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .left {
+      max-width: 80%;
+      margin: auto;
+    }
+    
+    .btn-wsp{
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: 30px;
+      background-color: #25d366;
+      color: #fff;
+      text-decoration: none;
+      transition: backgroud-color 0.3s;
+    }
+    .btn-wsp:hover{
+      background-color: #128c7e;
+    }
+    .home .wsp{
+      max-width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+    .home .head_container .box{
+      max-width: 80%;
+      margin: auto;
+    }
+    .redes-sociales{
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .redes-sociales a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 50%;
+    }
+    .whatsapp-icon{
+      background-image:url('../image/ftos/wsp.jpg');
+      
+    }
+    .instagram-icon{
+      background-image:url('../image/ftos/instagram.jpg');
+      
+    }
+    .facebook-icon{
+      background-image:url('../image/ftos/facebook.jpg');
+      
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+
+    * {  
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: 'Roboto Slab', serif;
+      scroll-behavior: smooth;
+      
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .head_container {
+      max-width: 80%;
+      margin: auto;
+    }
+
+    /*--------------header--------*/
+    header {
+      height: 8vh;
+    }
+
+    .logo img {
+      width: 100px;
+      border-radius: 100%;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    .hambuger {
+      display: none;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background-color: #fff;
+    }
+
+    header ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header ul li {
+      margin-left: 3rem;
+    }
+
+    header ul li a {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: white;
+      transition: 0.5s;
+    }
+
+    header ul li a:hover {
+      color: #C1B086;
+    }
+
+    @media only screen and (max-width: 768px) {
+      
+      header ul {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 20;
+      }
+
+      header ul.active {
+        left: 0%;
+      }
+
+      header ul li {
+        margin: 2.5rem 0;
+      }
+
+      header ul li a {
+        color: black;
+      }
+
+      .hambuger {
+        display: block;
+        cursor: pointer;
+      }
+
+      .hambuger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hambuger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hambuger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    /*--------------header--------*/
+    /*--------------home--------*/
+    #video-bg {          
+      width: 100%;
+      
+    }
+    .home .image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .home .text {
+      max-width: 50%;
+      color: white;
+      margin: 20% 0 0 10%;
+    }
+
+    .home h1 {
+      text-align: center;
+      font-size: 80px;
+      font-weight: 400;
+    }
+
+    .home p {
+      text-align: center;
+      font-weight: 400;
+      line-height: 25px;
+      font-family: sans-serif;
+      font-size: 17px;
+      margin: 50px 0 0 50px;
+    }
+
+    button {
+      padding: 20px 40px;
+      background: none;
+      outline: none;
+      border: 2px solid white;
+      border-radius: 50px;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .home button {
+      margin-left: 50px;
+    }
+
+    .home .image_item {
+      position: absolute;
+      top: 20%;
+      right: 20%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .home .image_item img {
+      width: 140px;
+      height: 94px;
+      margin: 10px;
+      transition: 0.5s;
+      border-right: 1px solid rgb(29, 29, 29);
+      border-bottom: 1px solid rgb(29, 29, 29);
+    }
+    .home .image_item img:hover{
+      border-right: 2px solid rgb(29, 29, 29);
+      border-bottom: 2px solid rgb(29, 29, 29);
+    }
+    .home .image_item img:active {
+      border: 2px solid white;
+    }
+
+    .home .box .text {
+      position: relative;
+    }
+
+    .home .box .text::after {
+      position: absolute;
+      /*content: 'H';*/
+      font-size: 500px;
+      top: -120%;
+      font-weight: bold;
+      opacity: 0.1;
+    }
+
+    /*--------------home--------*/
+    /*--------------book--------*/
+    .flex {
+      display: flex;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
+
+    .book {
+      margin-top: 10%;
+      width: 100%;
+      height: 20vh;
+      color: rgb(119, 56, 5);
+    }
+
+    .book .input {
+      background: #F96822;
+      padding: 20px 20px 40px 20px;
+    }
+
+    .book .search {
+      background: #FFF0CF;
+      padding: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      outline: none;
+      background: #FFF0CF;
+      margin-top: 16px;
+      color: #773805;
+    }
+
+    ::placeholder {
+      color: #773805;
+    }
+
+    .book .search {
+      width: 20%;
+    }
+
+    .book .search input {
+      background: none;
+      border: none;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 40px;
+    }
+
+    /*--------------book--------*/
+    /*--------------about--------*/
+    .top {
+      margin-top: 15%;
+    }
+
+    .mtop {
+      margin-top: 5%;
+    }
+
+    .left, .right {
+      width: 50%;
+    }
+
+    .left .image1{
+      margin: auto;
+    }
+
+    .about {
+      margin-bottom: 50px;
+    }
+
+    .about .img {
+      position: relative;
+      width: 100%;
+    }
+
+    .about .image1 {
+      width: 310px;
+      height: 450px;
+    }
+
+    .about .image2 {
+      width: 325px;
+      height: 220px;
+      position: absolute;
+      bottom: 5px;
+      z-index: 2;
+      right: 30%;
+    }
+
+    .heading {
+      position: relative;
+    }
+
+    .heading::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: #FFF0CF;
+    }
+
+    .heading h5 {
+      font-weight: 400;
+      letter-spacing: 2px;
+      padding-top: 20px;
+      color: #5f5f5f;
+    }
+
+    .heading h2 {
+      font-size: 30px;
+      font-weight: 400;
+      margin: 20px 0 40px 0;
+      color: #222222;
+    }
+
+    .heading p {
+      margin-bottom: 20px;
+      line-height: 25px;
+      color: #5f5f5f;
+      margin: 0 0 20px 50px;
+    }
+
+    .heading .btn1 {
+      margin: 50px 0 20px 50px;
+    }
+
+    .btn1 {
+      background: #FFF0CF;
+      color: #773805;
+    }
+
+    /*--------------about--------*/
+    /*--------------wrapper--------*/
+    .wrapper {
+      background-image: url("../image/vista.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 480px;
+      position: relative;
+    }
+
+    .wrapper .text {
+      background: #FFF0CF;
+      padding: 50px;
+      width: 40%;
+      height: 600px;
+      position: absolute;
+      top: -13%;
+      right: 10%;
+      padding-top: 10%;
+      color: #773805;
+    }
+
+    .wrapper .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 30px;
+    }
+
+    .wrapper h2 {
+      font-weight: 400;
+    }
+
+    .wrapper p {
+      margin: 20px 0 50px 0;
+      line-height: 30px;
+    }
+
+    .wrapper i {
+      margin: 5px 20px 0 0;
+    }
+
+    /*--------------wrapper--------*/
+    /*--------------room--------*/
+    .flex1 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .room .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .room img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .room .box {
+      box-shadow: 0 13px 43px 0 rgb(37 46 89/10%);
+    }
+
+    .room .text {
+      padding: 20px;
+    }
+
+    .room h3 {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .room p span {
+      font-size: 12px;
+      color: grey;
+    }
+
+    .room p {
+      font-size: 20px;
+    }
+
+    /*--------------room--------*/
+    /*--------------wrapper2--------*/
+    .wrapper2 {
+      background-image: url("../image/w1.jpg");
+    }
+
+    .wrapper2 .text {
+      left: 10%;
+    }
+
+    .wrapper2 h5,
+    .wrapper2 h2 {
+      color: white;
+    }
+
+    .wrapper2 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .wrapper2 .para h5 {
+      font-size: 13px;
+      font-weight: 300;
+      margin-top: 5px;
+    }
+
+    .wrapper2 .para {
+      margin-left: 10%;
+    }
+
+    /*--------------wrapper2--------*/
+    /*--------------restaurant--------*/
+    .restaurant img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .restaurant .right {
+      padding: 50px 50px 50px 100px;
+    }
+
+    .restaurant h2 {
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .restaurant .text p {
+      margin-bottom: 50px;
+      line-height: 25px;
+    }
+
+    .accordionItem {
+      margin-top: 30px;
+    }
+
+    .accordionItem p {
+      font-size: 15px;
+      opacity: 0.8;
+      font-family: sans-serif;
+      line-height: 20px;
+    }
+
+    .accordionIHeading {
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+      font-weight: 400;
+      font-size: 17px;
+      color: #C1B086;
+      margin-bottom: 20px;
+    }
+
+    .close .accordionItemContent {
+      height: 0px;
+      transition: height 1s ease-out;
+      transform: scaleY(0);
+      float: left;
+      display: block;
+      background-color: #fff;
+    }
+
+    .open .accordionItemContent {
+      padding: 30px;
+      background-color: #fff;
+      width: 100%;
+      margin: 0 0 10px 0;
+      display: block;
+      transform: scaleY(1);
+      transform-origin: top;
+      transition: transform 0.4s ease;
+      box-sizing: border-box;
+      box-shadow: 0 13px 43px 0 rgb(37 46 89 / 10%);
+    }
+
+    /*--------------restaurant--------*/
+    /*--------------gallary--------*/
+    .gallary img {
+      width: 270px;
+      height: 350px;
+    }
+
+    .owl-carousel .owl-next,
+    .owl-carousel .owl-prev {
+      height: 50px;
+      position: absolute;
+      width: 50px;
+      cursor: pointer;
+      top: 35%;
+      background: white !important;
+      transition: 0.5s;
+    }
+
+    .owl-carousel .owl-prev {
+      left: 33px;
+    }
+
+    .owl-carousel .owl-next {
+      right: 33px;
+    }
+
+    .owl-carousel .owl-next:hover,
+    .owl-carousel .owl-prev:hover {
+      background: #FFF0CF !important;
+    }
+
+    /*--------------gallary--------*/
+    /*--------------map--------*/
+    .map iframe {
+      width: 100%;
+    }
+
+    /*--------------map--------*/
+    /*--------------footer--------*/
+
+    #contact{
+      max-width: 50%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    footer h3 {
+      margin-bottom: 20px;
+    }
+
+    footer li {
+      margin-bottom: 15px;
+      transition: 0.5s;
+    }
+
+    footer li:hover {
+      color: #FFF0CF;
+      cursor: pointer;
+    }
+
+    /*--------------footer--------*/
+    @media only screen and (max-width:768px) {
+      .home .box .text {
+        max-width: 100%;
+      }
+
+      .home .box .text::after,
+      .home .image_item {
+        display: none;
+      }
+
+      .restaurant .container,
+      .about .container,
+      .book .container {
+        flex-direction:column;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .book {
+        margin-top: 10%;
+        height: auto;
+      }
+
+      .book .search {
+        width: 100%;
+      }
+
+      .book .search input {
+        margin-top: 0;
+      }
+
+      .left, .right {
+        width: 100%;
+      }
+
+      .wrapper .text {
+        width: 80%;
+      }
+
+      .room {
+        margin-bottom: 100px;
+      }
+
+      .room .grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .restaurant .right {
+        padding: 0;
+        margin-top: 50px;
+      }
+
+      footer .payment {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media only screen and (max-width:768px) {
+      .grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .home .text {
+        margin: 10% 0 0 0;
+      }
+
+      .home h1 {
+        font-size: 40px;
+      }
+
+      .about p,
+      .home p {
+        margin: 50px 0 0 0;
+      }
+
+      .wrapper .text {
+        padding: 10px;
+        height: 600px;
+      }
+
+      .heading_top {
+        margin-top: 100px;
+      }
+
+      .heading_top button {
+        display: none;
+      }
+
+      .restaurant .flex {
+        flex-direction: column-reverse;
+      }
+    }
+  </style>
+  </head>
+<body>
+  <div class="redes-sociales">
+    <a href="https://wa.me/0991649701" class="whatsapp-icon"></a>
+    <a href="https://www.instagram.com/@" class="instagram-icon"></a>
+    <a href="https://www.facebook.com/@" class="facebook-icon"></a>
+  </div>
+  <header class="header" id="navigation-menu">                
+    <div class="container" >
+      <video autoplay muted loop id="video-bg">
+        <source src="../image/ftos/video3.mp4" type="video/mp4">
+        <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+     <nav>
+        <a href="#" class="logo"> <img src="../image/ftos/logo.jpeg" style="border-radius: 70%; margin: 0px;" alt=""> </a>
+        <ul class="nav-menu">
+          <li> <a href="#home" class="nav-link">INICIO</a> </li>
+          <li> <a href="#about" class="nav-link">SOBRE NOSOTROS</a> </li>             
+          <li> <a href="#contact" class="nav-link">CONTACTOS</a> </li>
+        </ul>    
+        <div class="hambuger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const hambuger = document.querySelector('.hambuger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hambuger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hambuger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hambuger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+  <section class="home" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1 style="text-align:center;"> JEROVAI EMPRENDIMIENTOS</h1>
+          <div class="wsp">
+            <a href="https://api.whatsapp.com/send?phone=0974221568&text=Hola me interesan los lotes." target="_blank" class="btn-wsp">Contactanos al Whatsapp!!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.image');
+      line.style.background = change;
+    }
+  </script>
+  <section class="about top" id="about">
+    <div class="container flex">
+      <div class="left">
+          <img src="../image/ftos/logo.jpeg" alt="" class="image1" style="width: 95%; margin-left: 10px;">
+      </div>
+      <div class="right">
+        <div class="heading" style="margin-top: 80px;">
+          <h5>Rodeate de paz, naturaleza y relax.</h5>
+          <h2>Es tu Osportunidad de Adquirirlos</h2>
+          <p>Arpovecha estos hermosos lotes. <br>
+            En unos de los lugares donde mas se buscan lotes en venta.<br>
+            Invierte en ti y en tu futuro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionIHeading');
+
+    for (i = 0; i < accHD.length; i++) {
+      accHD[i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem() {
+      var itemClass = this.parentNode.className;
+      for (var i = 0; i < accItem.length; i++) {
+        accItem[i].className = 'accordionItem close';
+      }
+      if (itemClass == 'accordionItem close') {
+        this.parentNode.className = 'accordionItem open';
+      }
+    }
+  </script>
+  <section class="room top" id="room">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>ELEVAMOS EL CONFORT AL NIVEL MÁS ALTO</h5>
+          <h2>Jerovai Emprendimientos Presenta stos 23 Lotes en Video</h2>
+        </div>       
+      </div>
+      
+        <video autoplay muted controls id="video-bg">
+          <source src="../image/ftos/video2.mp4" type="video/mp4">
+          <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      
+    </div>
+  </section>
+  <section class="room top" id="room">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5></h5>
+          <h2>A Pocos Metros del Hermoso Lago Ypacarai</h2>
+        </div>       
+      </div>
+      
+        <video autoplay muted controls id="video-bg">
+          <source src="../image/ftos/video1.mp4" type="video/mp4">
+          <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      
+    </div>
+  </section>
+  <section class="room top" id="room">
+    <div class="container">
+        <div class="heading_top flex1">
+          <div class="heading">
+            <h5></h5>
+            <h2>A Pasos de la Ruta Principal de San Bernardino</h2>
+          </div>  
+        </div>
+        <video autoplay muted controls id="video-bg">
+          <source src="../image/ftos/video3.mp4" type="video/mp4">
+          <!-- Si el navegador no puede reproducir el video, puedes proporcionar una imagen de respaldo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
+  </section>
+  <section class="gallary mtop " id="gallary">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>BIENVENIDO A NUESTRA GALERIA DE FOTOS</h5>
+          <h2>Galeria de Fotos</h2>
+        </div>  
+      </div>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="../image/ftos/imagen1.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="../image/ftos/imagen2.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen3.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen4.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen5.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen1.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen2.jpeg" alt="">
+          </div>
+        <div class="item">
+          <img src="../image/ftos/imagen3.jpeg" alt="">
+          </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+  <section class="map top">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>¿Donde estan los lotes?</h5>
+          <h2>Estos lotes cuentan con unas de las mejores ubicaciones que quedan disponibles por la zona.</h2>
+        </div>  
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14131.036667732067!2d85.32395955!3d27.69383745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1637755481449!5m2!1sen!2snp" width="600" height="450" style="border:0;"
+      allowfullscreen="" loading="lazy"></iframe> 
+  </section>
+  <footer>
+    
+      <div class="box" id="contact">
+        <h3>Contactenos</h3>
+        <ul>
+          <li><i class="far fa-envelope"></i> demoexample@gmail.com </li>
+          <li><i class="far fa-phone-alt"></i> 123 456 7898 </li>
+          <li><i class="far fa-comments"></i> Atencion al cliente 24 horas al dia, 7 dias a la semana</li>
+        </ul>
+      </div>
+    
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
